@@ -1,0 +1,159 @@
+.first_page {
+    /* background-color: pink; */
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    margin: 99px auto;
+    height: 66vh;
+}
+.form{
+    margin: auto;
+    width: 400px;
+}
+
+.email {
+    /* background: yellow; */
+    text-align: center;
+    width: 20%;
+}
+#email{
+    border-radius: 19px;
+    width: 350px;
+    padding: 14px 4px 14px 14px; 
+    margin: 13px 0px 0px 0px;
+}
+.error_email{
+    width: 144px;
+
+}
+.password {
+    /* background: yellow; */
+    text-align: center;
+    width: 25%;
+}
+.confirm{
+    text-align: center;
+    width: 25% !important;
+}
+.error_password{
+    width: 144px;
+   
+
+}
+.confirm_password{
+    text-align: center;
+    width: 30%;
+}
+#password{
+    border-radius: 19px;
+    width: 350px;
+    padding: 14px 4px 14px 14px; 
+    margin: 13px 0px 0px 0px;
+
+
+}
+.p-relative{
+    position: relative;
+}
+.p-absolute{
+    position:absolute;
+}
+#password::placeholder{
+    font-size: 15px;
+}
+.icons
+{
+    top: 42px;
+    left: 239px;
+}
+.btn-next{
+    background-color: yellow;
+    cursor: pointer;
+    text-align: center;
+    width: 38%;
+    margin: 13px auto;
+    padding: 10px;
+    border-radius: 17px;
+}
+
+
+/* second page  */
+.second_page {
+    background-color: pink;
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    margin: 99px auto;
+}
+.second_form{
+    margin: 32px auto;
+    width: 286px;
+}
+.f_name{
+    margin-bottom: 5px;
+}
+#f_name{
+    width: 313px;
+    margin-top: 9px;
+    padding: 14px;
+    border-radius: 27px;
+    margin-bottom: 10px;
+
+}
+#f_name::placeholder{
+    font-size: 15px;
+}
+.l_name{
+    margin-bottom: 5px;
+}
+#l_name{
+    width: 313px;
+    margin-top: 9px;
+    padding: 14px;
+    border-radius: 27px;
+    margin-bottom: 10px;
+
+}
+#l_name::placeholder{
+    font-size: 15px;
+}
+.gender{
+    margin: 13px 0px;
+    font-size: 18px;
+}
+.button_radio{
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.phone{
+    margin-bottom: 5px;
+    font-size: 19px;
+}
+#phone{
+    width: 313px;
+    margin-top: 9px;
+    padding: 14px;
+    border-radius: 27px;
+    margin-bottom: 10px;
+
+}
+#phone::placeholder{
+    font-size: 15px;
+}
+#hobbies{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.btn_second{
+    width: 85px;
+    border: none;
+    margin: 0px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 15px;
+    border-radius: 28px;
+}
