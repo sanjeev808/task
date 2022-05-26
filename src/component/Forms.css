@@ -63,8 +63,13 @@
 }
 .icons
 {
-    top: 42px;
-    left: 239px;
+    top: 43px;
+    left: 327px;
+
+}
+.confirm_password_icons{
+    top: 60px;
+    left: 334px;
 }
 .btn-next{
     background-color: yellow;

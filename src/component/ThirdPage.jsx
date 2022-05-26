@@ -119,19 +119,19 @@ export default function Secondpage() {
         <div className='hobbbies'><label htmlFor="">Cousre</label>
           <div id='hobbies'>
             <div>
-              <input type="radio" id="cric" name="high_cousre" value={loginData.high_cousre}  />
+              <input type="radio" id="cric" name="high_cousre" value={loginData.high_cousre} required />
               <label for="vehicle1">Non-medical</label>
             </div>
             <div>
-              <input type="radio" id="cric" name="high_cousre" value={loginData.high_cousre}  />
+              <input type="radio" id="cric" name="high_cousre" value={loginData.high_cousre} required />
               <label for="vehicle1"> Commerce</label>
             </div>
             <div>
-              <input type="radio" id="cric" name="high_cousre" value={loginData.high_cousre}  />
+              <input type="radio" id="cric" name="high_cousre" value={loginData.high_cousre} required />
               <label for="vehicle1">Medical</label>
             </div>
             <div>
-              <input type="radio" id="cric" name="high_cousre" value={loginData.high_cousre}  />
+              <input type="radio" id="cric" name="high_cousre" value={loginData.high_cousre} required />
               <label for="vehicle1">Arts</label>
             </div>
           </div>
@@ -143,23 +143,23 @@ export default function Secondpage() {
         <div className='hobbbies'><label htmlFor="">Cousre</label>
           <div id='hobbies'>
             <div>
-              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course}/>
+              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course} required/>
               <label for="vehicle1">B.tech</label>
             </div>
             <div>
-              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course} />
+              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course} required />
               <label for="vehicle1"> BCA</label>
             </div>
             <div>
-              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course}/>
+              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course} required/>
               <label for="vehicle1">BBA</label>
             </div>
             <div>
-              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course} />
+              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course} required/>
               <label for="vehicle1">BSC</label>
             </div>
             <div>
-              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course} />
+              <input type="radio" id="cric" name="graduation_course" value={loginData.graduation_course}  required/>
               <label for="vehicle1">BA</label>
             </div>
           </div>

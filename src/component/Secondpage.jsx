@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
+import axios from 'axios';
+
 
 export default function Secondpage() {
-const Navigate=useNavigate();
     const data = {
         Firstname: "",
         Lastname: "",
@@ -30,7 +31,7 @@ const Navigate=useNavigate();
         const err = {};
         // const nregex=/^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/
         const numberregex = /^[0-9\b]+$/;
-        const validGender=new RegExp("([0-9]+Yrs)\s*([0-9]Mths|)\s([0-9]Days|)(\/|)(M|F|)")
+       
 
         // first name
         if (!val.Firstname) {
@@ -82,13 +83,20 @@ const Navigate=useNavigate();
 
 
     } console.log(error, "errr")
-    // const Navigate=useNavigate();
-    useEffect(() => {
-        console.log("new error")
-    }, [error])
+
+
+    console.log("this ",loginData)
+    const users = async () =>{
+        const result =  await axios.post("http://localhost:3008/members",loginData)
+        console.log("data is ",result.data)
+    }
+
+    const Navigate=useNavigate();
+  
     useEffect(() => {
         if (Object.keys(error).length === 0 && submit) {
             console.log("hello")
+            users();
             Navigate("/thirdpage")
         }
 
@@ -110,9 +118,9 @@ const Navigate=useNavigate();
                     <label htmlFor="" className='gender'>Gender</label>
                     <br />
                     <div className='button_radio'>
-                        <input type="radio" id="male" checked={loginData.gender == "male"} name="gender" value="male" onClick={handleChange} />
+                        <input type="radio" id="male" checked={loginData.gender == "male"} name="gender" value="male" onClick={handleChange} required />
                         <label for="male">male</label>
-                        <input type="radio" id="female" checked={loginData.gender == "female"} name="gender" value="female" onClick={handleChange} />
+                        <input type="radio" id="female" checked={loginData.gender == "female"} name="gender" value="female" onClick={handleChange} required />
                         <label for="css">female</label>
 
                     </div>

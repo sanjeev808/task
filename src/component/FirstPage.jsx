@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import { Navigate, NavLink, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 export default function FirstPage() {
@@ -82,21 +83,29 @@ setLoginData({...loginData,[name]:value})
         if(val.password.length>14){
             err.password="exceed"
         }
-      //   if(!val.confirmPassword){
-      //     err.confirmPassword="pass is required"data
-      // }
-      // if(val.password==val.confirmPassword)
-      // {
-      //   err.confirmPassword = "password  match"
-      // }  
+        if(!val.confirmPassword){
+          err.confirmPassword="pass is required";
+      }
+     else if(val.password !== val.confirmPassword)
+      {
+        err.confirmPassword = "password not  match"
+      }  
       return err
 
     }
-    const Navigate=useNavigate();
+   console.log("this ",loginData)
+    // use server
+    const user = async () =>{
+        const result =  await axios.post("http://localhost:3008/members",loginData)
+        console.log("data is ",result.data)
+    }
+
+   const Navigate=useNavigate();
   
 useEffect(()=>{
   if(Object.keys(error).length==0 &&submit){
 console.log("hello")
+user()
 Navigate("/secondpage")
 }
 
@@ -115,9 +124,9 @@ Navigate("/secondpage")
                     <input type={(PasswordEye === false) ? "password" : "text"} placeholder='Enter  
                     your Password' id='password' name="password" value={loginData.password} onChange={handleChange} />
                     <div className='p-absolute icons' >
-                        {/* {
+                        {
                             (PasswordEye === false) ? <VisibilityIcon className='icons' onClick={handlePasswordClick} /> : <VisibilityOffIcon className='ic' onClick={handlePasswordClick} />
-                        } */}
+                        }
 
 
                     </div><p className='error_password'> {error.password}</p>
@@ -125,20 +134,20 @@ Navigate("/secondpage")
 
                 <div className='confirm p-relative'>
                 <label htmlFor="Email" className='confirm'>Confirm Password  <span>*</span></label>
-                    <input type={(confirmPasswordEye === false) ? "password" : "text"} placeholder='Confirm Password' id='password' onChange={handleChange}
+                    <input type={(confirmPasswordEye === false) ? "password" : "text"} placeholder='Confirm Password' id='password' name='confirmPassword' value={loginData.confirmPassword}  onChange={handleChange}
                       />
-                    <div className='p-absolute icons' >
-                        {/* {
+                    <div className='p-absolute confirm_password_icons' >
+                        {
                             (confirmPasswordEye === false) ? <VisibilityIcon onClick={confirmHandlePasswordClick} /> : <VisibilityOffIcon onClick={confirmHandlePasswordClick} />
-                        } */}
+                        }
 
 
                     </div>
 
                 </div>
                 <p className='error_confirm'> {error.confirmPassword}</p>
-              <div className='btn-next' type="submit">
-             <button type="submit">Next</button>
+              <div>
+             <button type="submit"  className='btn-next'>Next</button>
                 </div>
             </form>
         </div>

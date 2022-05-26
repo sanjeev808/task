@@ -1,4 +1,74 @@
 {
-    "member":[],
-    "user":[]
+  "members": [
+    {
+      "email": "mauryasanjeev808@gmail.com",
+      "password": "Sanjeev123@.",
+      "confirmPassword": "Sanjeev123@.",
+      "id": 1
+    },
+    {
+      "email": "mauryasanjeev808@gmail.com",
+      "password": "Sanjeev123@.",
+      "confirmPassword": "fdgb",
+      "id": 2
+    },
+    {
+      "email": "7009711037@gamil.com",
+      "password": "Sanjeev123@.",
+      "confirmPassword": "sads",
+      "id": 3
+    },
+    {
+      "email": "mauryasanjeev808@gmail.com",
+      "password": "Sanjeev123@.",
+      "confirmPassword": "Sanjeev123",
+      "id": 4
+    },
+    {
+      "email": "mauryasanjeev808@gmail.com",
+      "password": "Sanjeev123@.",
+      "confirmPassword": "Sanjeev123@.",
+      "id": 5
+    },
+    {
+      "email": "mauryasanjeev808@gmail.com",
+      "password": "Sanjeev123@.",
+      "confirmPassword": "Sanjeev123@.",
+      "id": 6
+    },
+    {
+      "email": "mauryasanjeev808@gmail.com",
+      "password": "Sanjeev123@.",
+      "confirmPassword": "Sanjeev123@.",
+      "id": 7
+    },
+    {
+      "email": "mauryasanjeev808@gmail.com",
+      "password": "Sanjeev123@.",
+      "confirmPassword": "Sanjeev123@.",
+      "id": 8
+    },
+    {
+      "email": "cxdfs@gmail.com",
+      "password": "Sasd342@",
+      "confirmPassword": "Sasd342@",
+      "id": 9
+    },
+    {
+      "email": "sanjeev@gmail.com",
+      "password": "Sanjeev123@.",
+      "confirmPassword": "Sanjeev123@.",
+      "id": 10
+    },
+    {
+      "Firstname": "Sanjeev ",
+      "Lastname": "Maurya",
+      "Number": "1234567890",
+      "gender": "male",
+      "id": 11
+    }
+  ],
+  "data": [
+    {}
+  ]
 }
