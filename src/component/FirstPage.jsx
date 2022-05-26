@@ -17,6 +17,7 @@ export default function FirstPage() {
     const [confirmPasswordEye, setConfirmPasswordEye] = useState(false)
     const [error, setError] = useState({});
     const[submit,setSubmit]=useState(false)
+    
     const handlePasswordClick = () => {
         setPasswordEye(!PasswordEye)
     }

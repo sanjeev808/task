@@ -79,7 +79,7 @@
 
 /* second page  */
 .second_page {
-    background-color: pink;
+    /* background-color: pink; */
     width: 32%;
     display: flex;
     justify-content: center;
@@ -142,8 +142,12 @@
     font-size: 15px;
 }
 #hobbies{
+
+
     margin-left: 20px;
     margin-top: 10px;
+    margin-bottom: 15px;
+
 }
 
 .btn_second{
@@ -156,4 +160,12 @@
     justify-content: center;
     padding: 13px 15px;
     border-radius: 28px;
+}
+
+.high{
+    margin:10px 0px 
+}
+
+.flex-direction{
+    flex-direction: column;
 }

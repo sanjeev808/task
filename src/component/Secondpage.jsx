@@ -1,61 +1,157 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 export default function Secondpage() {
+const Navigate=useNavigate();
+    const data = {
+        Firstname: "",
+        Lastname: "",
+        Number: "",
+        gender: " "
+    }
+
+    const [loginData, setLoginData] = useState(data);
+    const [error, setError] = useState({});
+    const [submit, setSubmit] = useState(false)
+
+    const formsubmitted = (e) => {
+        e.preventDefault();
+        console.log(e.target.value);
+        setError(validation(loginData))
+        setSubmit(true)
+    }
+
+    function handleChange(e) {
+        const { name, value } = e.target
+        setLoginData({ ...loginData, [name]: value })
+    }
+
+    function validation(val) {
+        const err = {};
+        // const nregex=/^[a-zA-Z]{2,40}( [a-zA-Z]{2,40})+$/
+        const numberregex = /^[0-9\b]+$/;
+        const validGender=new RegExp("([0-9]+Yrs)\s*([0-9]Mths|)\s([0-9]Days|)(\/|)(M|F|)")
+
+        // first name
+        if (!val.Firstname) {
+            err.Firstname = "First name is required"
+        }
+
+        else if (val.Firstname.length < 3 || val.Firstname.length > 10) {
+            err.Firstname = "please write name greater then 3  less then 7 words"
+        }
+        else if (numberregex.test(val.Firstname)) {
+            err.Firstname = "values is always character"
+        }
+        // else if (!isNaN(val.Firstname)) {
+        //     err.Firstname = "values is always character"
+        // }
+
+        //last name
+        if (!val.Lastname) {
+            err.Lastname = "First name is required"
+        }
+        else if (val.Lastname.length < 3 || val.Lastname.length > 10) {
+            err.Lastname = "please write name greater then 3  less then 7 words"
+        }
+        else if (numberregex.test(val.Firstname)) {
+            err.Firstname = "values is always character"
+        }
+        else if (!isNaN(val.Lastname)) {
+            err.Lastname = "values is always character"
+        }
+//number
+
+        if (!val.Number) {
+            err.Number = "Number is required"
+        }
+        else if (val.Number.length >= 11) {
+            err.Number = "phone is greater then 10"
+        }
+        else if (!numberregex.test(val.Number)) {
+            err.Number = "only number required"
+        }
+        // if (!val.gender.checked) {
+        //     err.gender = "select one value please"
+
+        // }
+
+
+
+        return err
+
+
+    } console.log(error, "errr")
+    // const Navigate=useNavigate();
+    useEffect(() => {
+        console.log("new error")
+    }, [error])
+    useEffect(() => {
+        if (Object.keys(error).length === 0 && submit) {
+            console.log("hello")
+            Navigate("/thirdpage")
+        }
+
+    }, [error])
+    console.log(loginData.gender, "gender")
+    console.log(error.gender, "gender")
     return (
         <div className='second_page'>
-            <form action="" className='second_form'>
+            <form action="" className='second_form' onSubmit={formsubmitted} >
                 <div><label htmlFor="" className='f_name'>First Name</label> <br />
-                    <input type="text" id='f_name' placeholder='First Name' /></div>
+                    <input type="text" id='f_name' placeholder='First Name' name='Firstname' value={loginData.Firstname} onChange={handleChange} /></div>
+                <p className='error_email'>{error.Firstname}</p>
 
                 <div><label htmlFor="" className='l_name'>Last Name</label> <br />
-                    <input type="text" id='l_name' placeholder='Last Name' /></div>
-
+                    <input type="text" id='l_name' placeholder='Last Name' name='Lastname' value={loginData.Lastname} onChange={handleChange} /></div>
+                <p className='error_email'>{error.Lastname}</p>
 
                 <div className='Gender'>
                     <label htmlFor="" className='gender'>Gender</label>
                     <br />
                     <div className='button_radio'>
-                    <input type="radio" id="male" name="gender" value="male" />
-                    <label for="male">male</label>
-                    <input type="radio" id="female" name="gender" value="female" />
-                    <label for="css">female</label>
-                    <input type="radio" id="other" name="gender" value="other" />
-                    <label for="javascript">Other</label>
+                        <input type="radio" id="male" checked={loginData.gender == "male"} name="gender" value="male" onClick={handleChange} />
+                        <label for="male">male</label>
+                        <input type="radio" id="female" checked={loginData.gender == "female"} name="gender" value="female" onClick={handleChange} />
+                        <label for="css">female</label>
+
                     </div>
                 </div>
+                <p className='error_email'>{error.gender}</p>
+
 
 
                 <div><label htmlFor="" className='phone'>Phone</label>
-                    <input type="number" id='phone' placeholder='Phone' /></div>
+                    <input type="text" id='phone' placeholder='Phone' name='Number' value={loginData.Number} onChange={handleChange} /></div>
+                <p className='error_email'>{error.Number}</p>
 
 
                 {/* hobbies */}
-<div className='hobbbies'><label htmlFor="">Hobbies</label>
-<div id='hobbies'> 
-                <div>
-                    <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
-                    <label for="vehicle1">Playing Cricket</label>
+                <div className='hobbbies'><label htmlFor="">Hobbies</label>
+                    <div id='hobbies'>
+                        <div>
+                            <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
+                            <label for="vehicle1">Playing Cricket</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
+                            <label for="vehicle1"> Cylcing</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
+                            <label for="vehicle1"> Book Reading</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
+                            <label for="vehicle1">Gaming</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
+                            <label for="vehicle1">Talking</label>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
-                    <label for="vehicle1"> Cylcing</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
-                    <label for="vehicle1"> Book Reading</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
-                    <label for="vehicle1">Gaming</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="cric" name="vehicle1" value="Bike" />
-                    <label for="vehicle1">Talking</label>
-                </div>
-                </div>
-                </div>
-               <NavLink to='/thirdpage'> <button className='btn_second'>Next</button></NavLink>
+              <button className='btn_second'>Next</button>
             </form>
         </div>
     )
