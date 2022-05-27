@@ -50,7 +50,7 @@ export default function Secondpage() {
 
         //last name
         if (!val.Lastname) {
-            err.Lastname = "First name is required"
+            err.Lastname = "Last name is required"
         }
         else if (val.Lastname.length < 3 || val.Lastname.length > 10) {
             err.Lastname = "please write name greater then 3  less then 7 words"
@@ -87,7 +87,7 @@ export default function Secondpage() {
 
     console.log("this ",loginData)
     const users = async () =>{
-        const result =  await axios.post("http://localhost:3008/members",loginData)
+        const result =  await axios.post("http://localhost:3008/data",loginData)
         console.log("data is ",result.data)
     }
 
@@ -108,11 +108,11 @@ export default function Secondpage() {
             <form action="" className='second_form' onSubmit={formsubmitted} >
                 <div><label htmlFor="" className='f_name'>First Name</label> <br />
                     <input type="text" id='f_name' placeholder='First Name' name='Firstname' value={loginData.Firstname} onChange={handleChange} /></div>
-                <p className='error_email'>{error.Firstname}</p>
+                <p className='error_firstname'>{error.Firstname}</p>
 
                 <div><label htmlFor="" className='l_name'>Last Name</label> <br />
                     <input type="text" id='l_name' placeholder='Last Name' name='Lastname' value={loginData.Lastname} onChange={handleChange} /></div>
-                <p className='error_email'>{error.Lastname}</p>
+                <p className='error_lastname'>{error.Lastname}</p>
 
                 <div className='Gender'>
                     <label htmlFor="" className='gender'>Gender</label>
@@ -125,13 +125,13 @@ export default function Secondpage() {
 
                     </div>
                 </div>
-                <p className='error_email'>{error.gender}</p>
+                {/* <p className='error_email'>{error.gender}</p> */}
 
 
 
                 <div><label htmlFor="" className='phone'>Phone</label>
                     <input type="text" id='phone' placeholder='Phone' name='Number' value={loginData.Number} onChange={handleChange} /></div>
-                <p className='error_email'>{error.Number}</p>
+                <p className='error_number'>{error.Number}</p>
 
 
                 {/* hobbies */}

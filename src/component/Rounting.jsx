@@ -9,6 +9,7 @@ import FirstPage from './FirstPage.jsx'
 import Secondpage from './Secondpage.jsx';
 import ThirdPage from './ThirdPage.jsx';
 import Fourthpage from './Fourthpage';
+import Review from './Review.jsx'
 
 export default function Rounting() {
   return (
@@ -19,7 +20,7 @@ export default function Rounting() {
       <Route path="/secondpage" element={<Secondpage />} />
       <Route path="/thirdpage" element={<ThirdPage />} />
       <Route path="/fourthpage" element={<Fourthpage />} />
-
+      <Route path="/review" element={<Review />} />
 
 
     </Routes>

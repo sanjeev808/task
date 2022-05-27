@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
-import { Navigate, NavLink, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -53,10 +53,10 @@ setLoginData({...loginData,[name]:value})
             err.email="email is required"
         }
         if (!emailRegex.test(val.email)){
-            err.email = "plase enter ur valid email"
+            err.email = "please enter ur valid email"
         }
         if(val.password === ""){
-            err.password="pass is required"
+            err.password="password is required"
         }
        else if(!uppercaseRegExp.test(val.password))
         {
@@ -84,7 +84,7 @@ setLoginData({...loginData,[name]:value})
             err.password="exceed"
         }
         if(!val.confirmPassword){
-          err.confirmPassword="pass is required";
+          err.confirmPassword="password is required";
       }
      else if(val.password !== val.confirmPassword)
       {
@@ -145,7 +145,7 @@ Navigate("/secondpage")
                     </div>
 
                 </div>
-                <p className='error_confirm'> {error.confirmPassword}</p>
+                <p className='error_passwordconfirm'> {error.confirmPassword}</p>
               <div>
              <button type="submit"  className='btn-next'>Next</button>
                 </div>
