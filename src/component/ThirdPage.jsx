@@ -33,34 +33,43 @@ export default function Secondpage() {
   function validation(val) {
     const err = {};
     const matrixregex = /^[0-9\b]+$/;
+    const perregex =/\b(?<!\.)(?!0+(?:\.0+)?%)(?:\d|[1-9]\d|100)(?:(?<!100)\.\d+)?%/
+
+
     if (!val.highSchool) {
       err.highSchool = "Number is required";
     }
     else if (val.highSchool.length > 3) {
       err.highSchool = " never greater then 3 numbers ";
     }
-    else if (!matrixregex.test(val.highSchool)) {
-      err.highSchool = "only number required";
+    // else if (!matrixregex.test(val.highSchool)) {
+    //   err.highSchool = "only number required";
+    // }
+    else if (!perregex.test(val.highSchool)) {
+      err.highSchool = "one percentage is  required";
     }
 
     if (!val.seniorSecondary) {
       err.seniorSecondary = "Number is required";
     }
-    else if (val.seniorSecondary.length > 3) {
-      err.seniorSecondary = " Never greater then 3 numbers ";
-    }
-    else if (!matrixregex.test(val.seniorSecondary)) {
-      err.seniorSecondary = "only number required";
+    // else if (!matrixregex.test(val.seniorSecondary)) {
+    //   err.seniorSecondary = "only number required";
+    // }
+    else if (!perregex.test(val.seniorSecondary)) {
+      err.seniorSecondary = "one percentage is  required";
     }
 
     if (!val.graduation) {
       err.graduation = "Number is required";
     }
-    else if (val.graduation.length > 3) {
+    else if (val.graduation.length > 4) {
       err.graduation = " Never greater then 3 numbers ";
     }
-    else if (!matrixregex.test(val.graduation)) {
-      err.graduation = "only number required";
+    // else if (!matrixregex.test(val.graduation)) {
+    //   err.graduation = "only number required";
+    // }
+    else if (!perregex.test(val.graduation)) {
+      err.graduation = "one percentage is  required";
     }
 
 
@@ -72,29 +81,33 @@ export default function Secondpage() {
   } console.log(error, "errr")
 
   console.log("this ", loginData)
-  const education = async () => {
-    const result = await axios.post("http://localhost:3008/educations", loginData)
-    console.log("data is ", result.data)
-  }
+  // const education = async () => {
+  //   const result = await axios.post("http://localhost:3008/educations", loginData)
+  //   console.log("data is ", result.data)
+  // }
 
 
   const Navigate = useNavigate();
   useEffect(() => {
     if (Object.keys(error).length === 0 && submit) {
-      education();
+      // education();
       console.log("hello")
       Navigate("/fourthpage")
     }
 
   }, [error])
-  console.log(loginData.gender, "gender")
-  console.log(error.gender, "gender")
+
+  useEffect(() => {
+    localStorage.setItem('Education_info', JSON.stringify(loginData));
+  }, [loginData]);
+
   return (
     <div className='second_page'>
       <form action="" className='second_form' onSubmit={formsubmitted} >
 
         <div><label htmlFor="" className='phone'>10th</label>
-          <input type="text" id='phone' placeholder='Percentage' name='highSchool' value={loginData.highSchool} onChange={handleChange} /></div>
+          <input type="text" id='phone' min="0" max="100"  placeholder='Percentage' name='highSchool' value={loginData.highSchool} onChange={handleChange} /></div>
+          <span class="validity"></span>
         <p className='error_email'>{error.highSchool}</p>
 
         <div className='hobbbies'><label htmlFor="">Subject</label>
@@ -173,7 +186,7 @@ export default function Secondpage() {
             </div>
           </div>
         </div>
-        <button className='btn_second'>Next</button>
+        <button type='submit' className='btn_second'>Next</button>
       </form>
     </div>
   )

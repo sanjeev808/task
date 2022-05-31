@@ -1,142 +1,29 @@
 {
   "members": [
     {
-      "email": "7009711037@gamil.com",
+      "email": "mauryasanjeev808@gmail.com",
       "password": "Sanjeev123@.",
       "confirmPassword": "Sanjeev123@.",
       "id": 1
-    },
-    {
-      "email": "mauryasanjeev808@gmail.com",
-      "password": "Sanjeev123@.",
-      "confirmPassword": "Sanjeev123@.",
-      "id": 2
-    },
-    {
-      "email": "mauryasanjeev808@gmail.com",
-      "password": "Sanjeev123@.",
-      "confirmPassword": "Sanjeev123@.",
-      "id": 3
-    },
-    {
-      "email": "mauryasanjeev808@gmail.com",
-      "password": "Subham@123",
-      "confirmPassword": "Subham@123",
-      "id": 4
-    },
-    {
-      "email": "mauryasanjeev808@gmail.com",
-      "password": "Sanjeev123@.",
-      "confirmPassword": "Sanjeev123@.",
-      "id": 5
     }
   ],
   "data": [
-    {
-      "Firstname": "Sanjeev",
-      "Lastname": "Maurya",
-      "Number": "32435435",
-      "gender": "male",
-      "id": 1
-    },
-    {
-      "Firstname": "Sanjeev ",
-      "Lastname": "Maurya",
-      "Number": "654356476",
-      "gender": "male",
-      "id": 2
-    },
     {
       "Firstname": "Sanjeev ",
       "Lastname": "Maurya",
       "Number": "1234567890",
       "gender": "male",
-      "id": 3
-    },
-    {
-      "Firstname": "saddsdsd",
-      "Lastname": "sdsdsds",
-      "Number": "1234564564",
-      "gender": "female",
-      "id": 4
-    },
-    {
-      "Firstname": "Sanjeev",
-      "Lastname": "Maurya",
-      "Number": "2343546757",
-      "gender": "male",
-      "id": 5
+      "id": 1
     }
   ],
   "educations": [
     {
-      "highSchool": "21",
-      "seniorSecondary": "21",
+      "highSchool": "12%",
+      "seniorSecondary": "21%",
       "seniorSecondary_cousre": "Medical",
-      "graduation": "23",
+      "graduation": "21%",
       "graduation_course": "BBA",
       "id": 1
-    },
-    {
-      "highSchool": "21",
-      "seniorSecondary": "34",
-      "seniorSecondary_cousre": "Commerce",
-      "graduation": "43",
-      "graduation_course": "BBA",
-      "id": 2
-    },
-    {
-      "highSchool": "23",
-      "seniorSecondary": "23",
-      "seniorSecondary_cousre": "Commerce",
-      "graduation": "43",
-      "graduation_course": "B.Tech",
-      "id": 3
-    },
-    {
-      "picture": "",
-      "seniorSecondary": "",
-      "seniorSecondary_cousre": "",
-      "graduation": "",
-      "graduation_course": "",
-      "": "C:\\fakepath\\complain.png",
-      "id": 4
-    },
-    {
-      "highSchool": "21",
-      "seniorSecondary": "21",
-      "seniorSecondary_cousre": "Non-medical",
-      "graduation": "21",
-      "graduation_course": "B.Tech",
-      "id": 5
-    },
-    {
-      "picture": "",
-      "seniorSecondary": "",
-      "seniorSecondary_cousre": "",
-      "graduation": "",
-      "graduation_course": "",
-      "": "C:\\fakepath\\complain.png",
-      "id": 6
-    },
-    {
-      "highSchool": "21",
-      "seniorSecondary": "43",
-      "seniorSecondary_cousre": "Commerce",
-      "graduation": "23",
-      "graduation_course": "BBA",
-      "id": 7
     }
   ]
 }
-
-
-Hi Sir,
-Today I Did Following Tasks:
-
- * Made Connections with Mongodb
- * Routing In mongoDB
- * Crud in Mongodb
- 
-  Regards
- Shivanshu

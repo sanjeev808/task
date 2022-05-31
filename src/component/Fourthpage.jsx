@@ -41,15 +41,15 @@ export default function Fourthpage() {
     
 
       console.log("this ", loginData)
-  const education = async () => {
-    const result = await axios.post("http://localhost:3008/educations", loginData)
-    console.log("data is ", result.data)
-  }
+  // const education = async () => {
+  //   const result = await axios.post("http://localhost:3008/educations", loginData)
+  //   console.log("data is ", result.data)
+  // }
     
   const Navigate = useNavigate();
   useEffect(() => {
     if (Object.keys(error).length === 0 && submit) {
-      education();
+      // education();
       console.log("hello")
       Navigate("/review")
     }

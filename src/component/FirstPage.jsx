@@ -33,7 +33,13 @@ export default function FirstPage() {
        
         setError(validation(loginData))
         setSubmit(true)
+
+        
     }
+
+
+
+   
 
 function handleChange(e){
     const{name,value}=e.target
@@ -94,23 +100,27 @@ setLoginData({...loginData,[name]:value})
 
     }
    console.log("this ",loginData)
-    // use server
-    const user = async () =>{
-        const result =  await axios.post("http://localhost:3008/members",loginData)
-        console.log("data is ",result.data)
-    }
+   
 
    const Navigate=useNavigate();
   
 useEffect(()=>{
   if(Object.keys(error).length==0 &&submit){
 console.log("hello")
-user()
+// user()
+
 Navigate("/secondpage")
 }
 
 },[error])
     console.log(error,"errr")
+
+
+
+    useEffect(() => {
+      localStorage.setItem('loginData', JSON.stringify(loginData));
+    }, [loginData]);
+
     return (
         <div className='first_page'>
             <form action="" className='form' onSubmit={formsubmitted} >

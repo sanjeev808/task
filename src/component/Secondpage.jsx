@@ -86,23 +86,27 @@ export default function Secondpage() {
 
 
     console.log("this ",loginData)
-    const users = async () =>{
-        const result =  await axios.post("http://localhost:3008/data",loginData)
-        console.log("data is ",result.data)
-    }
+    // const users = async () =>{
+    //     const result =  await axios.post("http://localhost:3008/data",loginData)
+    //     console.log("data is ",result.data)
+    // }
 
     const Navigate=useNavigate();
   
     useEffect(() => {
         if (Object.keys(error).length === 0 && submit) {
             console.log("hello")
-            users();
+            // users();
             Navigate("/thirdpage")
         }
 
     }, [error])
-    console.log(loginData.gender, "gender")
-    console.log(error.gender, "gender")
+
+
+    useEffect(() => {
+        localStorage.setItem('user_info', JSON.stringify(loginData));
+      }, [loginData]);
+  
     return (
         <div className='second_page'>
             <form action="" className='second_form' onSubmit={formsubmitted} >
